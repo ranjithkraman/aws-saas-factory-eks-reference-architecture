@@ -13,7 +13,6 @@ fi
 
 S3_BUCKET=$1
 CUSTOM_DOMAIN=$2
-# aws s3 ls s3://$S3_BUCKET
 echo "aws s3 ls s3://$S3_BUCKET"
 if [ $? -ne 0 ]; then
     echo "Error! S3 Bucket: $S3_BUCKET not readable"
