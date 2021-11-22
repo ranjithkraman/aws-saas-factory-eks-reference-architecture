@@ -12,6 +12,7 @@ fi
 STACK_NAME=$1
 DOMAINNAME=$2
 
+# Retrieve websites S3 bucket name
 ADMIN_SITE_BUCKET=$(aws cloudformation list-exports --query "Exports[?Name=='${STACK_NAME}-EksRefArchAdminAppBucket'].Value" --output text)
 APP_SITE_BUCKET=$(aws cloudformation list-exports --query "Exports[?Name=='${STACK_NAME}-EksRefArchAppBucket'].Value" --output text)
 LANDING_SITE_BUCKET=$(aws cloudformation list-exports --query "Exports[?Name=='${STACK_NAME}-EksRefArchLandingAppBucket'].Value" --output text)
